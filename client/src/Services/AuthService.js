@@ -1,5 +1,3 @@
-// to contain fetch requests to our endpoints
-
 export default {
     login : user => {
         return fetch('/user/login', {
