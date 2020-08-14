@@ -1,4 +1,7 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './global';
+import { theme } from './theme';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Login from './Components/Login';
@@ -11,14 +14,22 @@ import PublicRoute from './hocs/PublicRoute';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Route exact path="/" component={Home}/>
-      <PublicRoute path='/login' component={Login} />
-      <PublicRoute path='/register' component={Register} />
-      <PrivateRoute path='/todos' component={Todos} roles={["user", "admin"]}/>
-      <PrivateRoute path='/admin' component={Admin} roles={["admin"]}/>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <div>
+          <Router>
+            <Navbar />
+            <Route exact path="/" component={Home}/>
+            <PublicRoute path='/login' component={Login} />
+            <PublicRoute path='/register' component={Register} />
+            <PrivateRoute path='/todos' component={Todos} roles={["user", "admin"]}/>
+            <PrivateRoute path='/admin' component={Admin} roles={["admin"]}/>
+          </Router>
+        </div>
+      </>
+  </ThemeProvider>
+
   );
 }
 
