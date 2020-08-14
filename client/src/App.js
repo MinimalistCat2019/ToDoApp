@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
@@ -12,7 +12,9 @@ import Admin from './Components/Admin';
 import PrivateRoute from './hocs/PrivateRoute';
 import PublicRoute from './hocs/PublicRoute';
 
+
 function App() {
+  
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -20,7 +22,7 @@ function App() {
         <div>
           <Router>
             <Navbar />
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Home} />
             <PublicRoute path='/login' component={Login} />
             <PublicRoute path='/register' component={Register} />
             <PrivateRoute path='/todos' component={Todos} roles={["user", "admin"]}/>
