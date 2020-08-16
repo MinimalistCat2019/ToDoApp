@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
@@ -13,9 +13,17 @@ import PrivateRoute from './hocs/PrivateRoute';
 import PublicRoute from './hocs/PublicRoute';
 
 
-function App() {
-  
-  return (
+class App extends Component {
+  state = {
+    navbarOpen: false
+  }
+
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen});
+  }
+
+  render () {
+    return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyles />
@@ -31,8 +39,8 @@ function App() {
         </div>
       </>
   </ThemeProvider>
-
-  );
+    )
+  };
 }
 
 export default App;

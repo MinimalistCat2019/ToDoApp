@@ -6,7 +6,9 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
   *, *::after, *::before {
-    box-sizing: border-box;
+    box-sizing: inherit;
+    padding: 0px;
+    margin: 0px;
   }
   body {
     align-items: center;
@@ -18,5 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     justify-content: center;
     text-rendering: optimizeLegibility;
+    box-sizing: border-box;
   }
   `
