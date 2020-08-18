@@ -58,20 +58,22 @@ const Todos = props => {
                 }
             </ul>
             <br/>
-            <Form onSubmit={onSubmit} >
-                <h3>Create a new Todo</h3>
-                <br/>
-                <label htmlFor="todo">
-                    <Input  type="type" 
-                            name="todo" 
-                            value={todo.name} 
-                            onChange={onChange} 
-                            className="form-control" 
-                            placeholder="Please Enter Todo" />
-                </label>
-                <Button className="btn btn-lg btn-primary btn-block" type="submit">Submit</Button>
+            <Form>
+                <form onSubmit={onSubmit} >
+                    <h3>Create a new Todo</h3>
+                    <br/>
+                    <label htmlFor="todo">
+                        <Input  type="type" 
+                                name="todo" 
+                                value={todo.name} 
+                                onChange={onChange} 
+                                className="form-control" 
+                                placeholder="Please Enter Todo" />
+                    </label>
+                    <Button className="btn btn-lg btn-primary btn-block" type="submit">Submit</Button>
+                </form>
+                {message ? <Message message={message}/> : null}
             </Form>
-            {message ? <Message message={message}/> : null}
         </div>
     );
 }
