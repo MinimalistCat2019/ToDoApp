@@ -49,7 +49,7 @@ const Login = props => {
                             placeholder="Enter Password"/>
                 </label>
                 <Button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Log in</Button>
+                        type="submit">Submit</Button>
             </form>
             {message ? <Message message={message}/> : null}
         </Form>
