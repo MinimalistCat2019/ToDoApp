@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
-import Navbar from './Components/Navbar';
+import Header from './Components/Header';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
@@ -29,7 +29,8 @@ class App extends Component {
         <GlobalStyles />
         <div>
           <Router>
-            <Navbar />
+
+            <Header />
             <Route exact path="/" component={Home} />
             <PublicRoute path='/login' component={Login} />
             <PublicRoute path='/register' component={Register} />

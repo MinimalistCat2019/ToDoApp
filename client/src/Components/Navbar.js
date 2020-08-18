@@ -6,10 +6,6 @@ import styled from 'styled-components';
 import { theme } from '../theme';
 import { useSpring, animated, config } from 'react-spring';
 
-import Brand from './Brand';
-import BurgerMenu from './BurgerMenu';
-import CollapseMenu from './CollapseMenu';
-
 const Navbar = (props) => {
 
   const barAnimation = useSpring({
@@ -40,7 +36,6 @@ const Navbar = (props) => {
   const unauthenticatedNavBar = (props) => {
     return (
       <StyledMainNav style={barAnimation}>
-      <Brand />
         <Button>
           <StyledLink style={linkAnimation} to="/">
             Home
@@ -64,7 +59,6 @@ const Navbar = (props) => {
     return (
       <>
       <StyledMainNav style={barAnimation}> 
-        <Brand />
         <Button>
           <StyledLink style={linkAnimation} to="/">
             Home
@@ -98,10 +92,6 @@ const Navbar = (props) => {
             {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
           </FlexContainer>
       </StyledMainNav>
-      {/* <CollapseMenu 
-        navbarState={props.navbarState} 
-        handleNavbar={props.handleNavbar}
-      /> */}
     </>
   );
 };
@@ -121,7 +111,7 @@ const Button = styled.button`
     color: ${theme.primaryHover};
 }
   @media (max-width: 768px) {
-      font-size: .8em;
+      font-size: .65em;
       padding: .25em .2em;
       margin: 0.2em;
     }
@@ -158,7 +148,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledMainNav = styled(animated.nav)`
-    position: fixed;
+    {/* position: fixed; */}
     width: 100%;
     top: 0;
     left: 0;
@@ -177,5 +167,6 @@ const FlexContainer = styled.div`
   margin: auto;
   padding: 0 2rem;;
   justify-content: space-between;
-  height: 5rem;
+  height: 3rem;
+  flex-direction: row-reverse;
 `;
