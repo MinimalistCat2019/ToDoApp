@@ -50,13 +50,13 @@ const Todos = props => {
 
     return(
         <div>
-            <ul className="list-group">
+            <TodosList>
                 {
                     todos.map(todo => {
                         return <TodoItem key={todo._id} todo={todo} />
                     })
                 }
-            </ul>
+            </TodosList>
             <br/>
             <Form>
                 <form onSubmit={onSubmit} >
@@ -79,6 +79,15 @@ const Todos = props => {
 }
 
 export default Todos;
+
+const TodosList = styled.div`
+    border: 2px solid ${theme.primaryYellow};
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+
+`
 
 const Form = styled.div`
     background: ${theme.primaryLight};
@@ -122,7 +131,7 @@ const Button = styled.button`
     }
 //   @media (max-width: 768px) {
 //       font-size: .65em;
-//       padding: .25em .2em;
-//       margin: 0.2em;
+//       padding: 0.5;
+//       margin: 0.5em;
 //     }
 `;
