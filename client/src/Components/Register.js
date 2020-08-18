@@ -80,13 +80,14 @@ const Input = styled.input.attrs(props => ({
     // we can define static props
   }))`
     color: ${ theme.primaryDark };
+   
     font-size: 1em;
     border: 2px solid ${theme.primaryDark};
     border-radius: 10px;
   
     /* here we use the dynamically computed prop */
-    margin: ${props => props.size};
-    padding: ${props => props.size};
+    margin: 0.5rem;
+    padding: 0.5rem;
   `;
   
 
@@ -94,8 +95,8 @@ const Button = styled.button`
   background: ${theme.primaryDark};
   color: ${ theme.primaryLight };
   font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
+  margin: .5em;
+  padding: 0.5rem;
   border: 2px solid ${theme.primaryLight};
   border-radius: 10px;
   text-transform: uppercase;
@@ -103,22 +104,20 @@ const Button = styled.button`
     text-decoration: none;
     color: ${theme.primaryHover};
     }
-  @media (max-width: 768px) {
-      font-size: .65em;
-      padding: .25em .2em;
-      margin: 0.2em;
-    }
+//   @media (max-width: 768px) {
+//       font-size: .65em;
+//       padding: .25em .2em;
+//       margin: 0.2em;
+//     }
 `;
 
-const Form = styled.form`
+const Form = styled.div`
     background: ${theme.primaryLight};
     color: ${theme.primaryDark};
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 1em;
-    padding: 10px;
-    justify-content: space-between;
+    max-width: 120rem;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 2rem 2rem;
     text-transform: uppercase;
     *, *:before, *:after {
         box-sizing: border-box;
