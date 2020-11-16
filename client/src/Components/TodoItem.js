@@ -26,9 +26,9 @@ const TodoItem = props => {
     return (
         <>
             <Todo>{props.todo.name}</Todo>
-            <form onSubmit={onSubmit}>
+            {/* <form onSubmit={onSubmit}>
                 <button type="submit">Remove</button>
-            </form>
+            </form> */}
         </>
     )
 }

@@ -26,7 +26,7 @@ userRouter.post('/register', (req, res) => {
             newUser.save(err => {
                 if(err)
                     res.status(500).json({message: {msgBody: "Error has occured", msgError: true}});
-                else
+                else 
                 res.status(201).json({message: {msgBody: "Account successfully created", msgError: false}});
             })
         }
@@ -36,6 +36,7 @@ userRouter.post('/register', (req, res) => {
 userRouter.post('/login', passport.authenticate('local', {session: false}), (req, res) => {
     if(req.isAuthenticated()) {
         const {_id, username, role} = req.user;
+        console.log(_id)
         const token = signToken(_id);
         res.cookie('access_token', token, {httpOnly: true, sameSite: true});
         res.status(200).json({isAuthenticated: true, user: {username, role}});
